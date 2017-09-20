@@ -10,10 +10,14 @@
     <license>Apache 2.0</license>
     <keywords>google,play,services,google-play-services</keywords>
     <repo>https://github.com/wischweh/Cordova-PlayServiceUpdater.git</repo>
-    
+
     <engines>
         <engine name="cordova-android" version=">=3"/>
     </engines>
+
+  <js-module src="www/PlayServiceUpdater.js" name="PlayServiceUpdater">
+    <clobbers target="window.playservice_updater" />
+  </js-module>
 
     <!-- android -->
     <platform name="android">
@@ -26,8 +30,8 @@
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
         </config-file>
 
-        <!-- <source-file src="platforms/android/src/de/ndr/engine/XWalkWebViewEngine.java" target-dir="src/org/crosswalk/engine"/> 
-        
+        <!-- <source-file src="platforms/android/src/de/ndr/engine/XWalkWebViewEngine.java" target-dir="src/org/crosswalk/engine"/>
+
         <framework src="platforms/android/xwalk.gradle" custom="true" type="gradleReference"/> -->
 
         <hook type="after_plugin_install" src="hooks/after_plugin_install/000-shared_mode_special.js"/>
